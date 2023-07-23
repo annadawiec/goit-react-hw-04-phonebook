@@ -19,7 +19,7 @@ import css from './App.module.css';
 
 export const App = () => {
   const [contacts, setContacts] = useState(
-    JSON.parse(localStorage.getItem('contact')) ?? []
+    JSON.parse(localStorage.getItem('contacts')) ?? []
   );
   const [filter, setFilter] = useState('');
 
@@ -27,7 +27,7 @@ export const App = () => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
-  const formSubmit = ({ name, number }) => {
+  const formSubmit = (name, number) => {
     const contact = {
       id: nanoid(),
       name,
